@@ -1,0 +1,50 @@
+<<EOT
+autoUpdate:
+  enabled: false
+  schedule: ""
+cluster:
+  clusterName: "ps-jx-cluster"
+  devEnvApprovers: []
+  environmentGitOwner: ""
+  project: "jenkinsx-pluralsight-project"
+  provider: gke
+  zone: "us-central1-a"
+gitops: true
+environments:
+- key: dev
+- key: staging
+- key: production
+ingress:
+  domain: ""
+  externalDNS: false
+  tls:
+    email: ""
+    enabled: false
+    production: true
+kaniko: true
+kuberhealthy: true
+storage:
+  backup:
+    enabled: false
+  logs:
+    enabled: true
+    url: gs://logs-ps-jx-cluster-b898c1991aed
+  reports:
+    enabled: true
+    url: gs://reports-ps-jx-cluster-b898c1991aed
+  repository:
+    enabled: true
+    url: gs://repository-ps-jx-cluster-b898c1991aed
+secretStorage: vault
+terraformVault: true
+vault:
+  name: ps-jx-cluster
+  bucket: vault-ps-jx-cluster-b898c1991aed
+  key: crypto-key-ps-jx-cluster-b898c1991aed
+  keyring: keyring-ps-jx-cluster-b898c1991aed
+  serviceAccount: ps-jx-cluster-vt
+versionStream:
+  ref: master
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: "lighthouse"
+EOT

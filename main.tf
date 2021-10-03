@@ -13,3 +13,6 @@ terraform {
   }
 }
 
+output "jx_requirements" {
+  value = module.jx.jx_requirements
+} 
